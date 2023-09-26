@@ -7,6 +7,6 @@ setup(
     author='Bard',
     author_email='bard@google.com',
     packages=['neap'],
-    py_modules=['neap.ReportClient'],
+    py_modules=['neap.ReportCard'],
     install_requires=['requests'],
 )
