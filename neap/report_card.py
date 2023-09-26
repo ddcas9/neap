@@ -12,9 +12,13 @@ class ReportCard:
             "grade": grade,
             "subscale": subscale,
         }
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-        }
+
+        if self.api_key:
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+            }
+        else:
+            headers=None
 
         response = requests.get(url, params=params, headers=headers)
         response.raise_for_status()
@@ -28,9 +32,12 @@ class ReportCard:
             "subject": subject,
             "grade": grade,
         }
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-        }
+        if self.api_key: 
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+            }
+        else:
+            headers=None
 
         response = requests.get(url, params=params, headers=headers)
         response.raise_for_status()
@@ -45,9 +52,12 @@ class ReportCard:
         }
         if subscales:
             params["subscales"] = ",".join(subscales)
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-        }
+        if self.api_key:
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+            }
+        else:
+            headers=None
 
         response = requests.get(url, params=params, headers=headers)
         response.raise_for_status()
@@ -67,9 +77,12 @@ class ReportCard:
             params["jurisdictions"] = ",".join(jurisdictions)
         if assessment_years:
             params["assessmentYears"] = ",".join(assessment_years)
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-        }
+        if self.api_key:
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+            }
+        else:
+            headers=None
 
         response = requests.get(url, params=params, headers=headers)
         response.raise_for_status()
