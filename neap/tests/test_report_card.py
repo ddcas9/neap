@@ -1,6 +1,6 @@
 import unittest
 
-from neap.report_card import ReportCard
+from neap import ReportCard
 
 class TestReportCard(unittest.TestCase):
 
