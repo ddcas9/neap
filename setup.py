@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='neap',
@@ -6,6 +6,6 @@ setup(
     description='A Python wrapper for the NEAP API',
     author='Bard',
     author_email='bard@google.com',
-    packages=['neap'],
+    packages=find_packages()
     install_requires=['requests'],
 )
