@@ -1,7 +1,7 @@
 import requests
 
 class ReportCard:
-    def __init__(self, api_key):
+    def __init__(self, api_key=None):
         self.api_key = api_key
 
     def get_adhoc_data(self, assessment_year, subject, grade, subscale):
